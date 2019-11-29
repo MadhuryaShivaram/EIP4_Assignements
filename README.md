@@ -52,10 +52,6 @@ mymodel.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.03), metric
 
 
 3.  50 EPOCH LOGS :
-
-/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:14: UserWarning: The semantics of the Keras 2 argument `steps_per_epoch` is not the same as the Keras 1 argument `samples_per_epoch`. `steps_per_epoch` is the number of batches to draw from the generator at each epoch. Basically steps_per_epoch = samples_per_epoch/batch_size. Similarly `nb_val_samples`->`validation_steps` and `val_samples`->`steps` arguments have changed. Update your method calls accordingly.
-  
-/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:14: UserWarning: Update your `fit_generator` call to the Keras 2 API: `fit_generator(<keras_pre..., validation_data=(array([[[..., verbose=1, steps_per_epoch=390, epochs=50)`
   
 Epoch 1/50
 390/390 [==============================] - 21s 55ms/step - loss: 1.4250 - acc: 0.4920 - val_loss: 2.2883 - val_acc: 0.4764
