@@ -5,6 +5,8 @@
 
 2.  Your model definition (model.add... ) with output channel size and receptive field:
 
+# Define the model
+
 mymodel = Sequential()
 mymodel.add(SeparableConv2D(48, 3, 3, border_mode='same', input_shape=(32, 32, 3)))  #32  #RF=3
 mymodel.add(Activation('relu'))
@@ -16,39 +18,38 @@ mymodel.add(Activation('relu'))
 mymodel.add(BatchNormalization())
 mymodel.add(Dropout(0.1))
 
-mymodel.add(MaxPooling2D(pool_size=(2, 2)))   #15    #RF=7
+mymodel.add(MaxPooling2D(pool_size=(2, 2)))   #15    #RF=6
 mymodel.add(Dropout(0.25))
 
-mymodel.add(SeparableConv2D(96, 3, 3, border_mode='same'))   #15   #RF=11
+mymodel.add(SeparableConv2D(96, 3, 3, border_mode='same'))   #15   #RF=10
 mymodel.add(Activation('relu'))
 mymodel.add(BatchNormalization())
 mymodel.add(Dropout(0.1))
 
-mymodel.add(SeparableConv2D(96, 3, 3))    #13   #RF=15
+mymodel.add(SeparableConv2D(96, 3, 3))    #13   #RF=14
 mymodel.add(Activation('relu'))
 mymodel.add(BatchNormalization())
 mymodel.add(Dropout(0.1))
 
-mymodel.add(MaxPooling2D(pool_size=(2, 2)))   #6   #RF=17
+mymodel.add(MaxPooling2D(pool_size=(2, 2)))   #6   #RF=18
 mymodel.add(Dropout(0.25))
 
-mymodel.add(SeparableConv2D(192, 3, 3, border_mode='same'))   #6   #RF=25
+mymodel.add(SeparableConv2D(192, 3, 3, border_mode='same'))   #6   #RF=26
 mymodel.add(Activation('relu'))
 mymodel.add(BatchNormalization())
 mymodel.add(Dropout(0.1))
 
-mymodel.add(SeparableConv2D(192, 3, 3))   #4    #RF=33
+mymodel.add(SeparableConv2D(192, 3, 3))   #4    #RF=34
 mymodel.add(Activation('relu'))
 mymodel.add(BatchNormalization())
 mymodel.add(Dropout(0.1))
 
-mymodel.add(SeparableConv2D(10, 4, 4))   #1      #RF=45
+mymodel.add(SeparableConv2D(10, 4, 4))   #1      #RF=46
 mymodel.add(Activation('relu'))
 mymodel.add(BatchNormalization())
 
 mymodel.add(Flatten())
 mymodel.add(Activation('softmax'))
-mymodel.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.03), metrics=['accuracy'])
 
 
 3.  50 EPOCH LOGS :
